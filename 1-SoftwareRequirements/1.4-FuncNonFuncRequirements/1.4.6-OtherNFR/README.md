@@ -2,8 +2,8 @@
 
 | FR    | NFR    | Тип NFR                 | Опис NFR                                                     |
 |-------|--------|-------------------------|--------------------------------------------------------------|
-| FR1.1 | NFR2.4 | Time Performance        | 2 sec                                                        |
-| FR1.2 | NFR2.5 | Time Performance        | 5 sec                                                        |
-| FR1.3 | NFR2.6 | Time Performance        | 2 sec                                                        |
+| FR2.1 | NFR2.4 | Time Performance        | 2 sec                                                        |
+| FR2.2 | NFR2.5 | Time Performance        | 5 sec                                                        |
+| FR2.3 | NFR2.6 | Time Performance        | 2 sec                                                        |
 |       | NFR2.7 | Hardware                | Комп'ютер, 2/3-кнопочний маніпулятор типу "комп'ютерна миша" |
 |       | NFR2.8 | Data Transfer Interface | Ethernet, WiFi, зі швидкість від 1 Мбіт/с                    |
