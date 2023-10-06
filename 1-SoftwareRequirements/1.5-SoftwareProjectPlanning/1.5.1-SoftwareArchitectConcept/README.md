@@ -1,0 +1,2 @@
+### Концептуальний опис архітектури програмного продукту
+![UML-діаграма розгортання для ПП RWA-типу.jpg](https://github.com/oleksandrblazhko/ai-211-kanarskij/blob/0fb45f0d0230ab3c8221bd43e8c79d1ddb22e8b1/1-SoftwareRequirements/1.5-SoftwareProjectPlanning/1.5.1-SoftwareArchitectConcept/UML-%D0%B4%D1%96%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%B0%20%D1%80%D0%BE%D0%B7%D0%B3%D0%BE%D1%80%D1%82%D0%B0%D0%BD%D0%BD%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D0%9F%D0%9F%20RWA-%D1%82%D0%B8%D0%BF%D1%83.jpg)
