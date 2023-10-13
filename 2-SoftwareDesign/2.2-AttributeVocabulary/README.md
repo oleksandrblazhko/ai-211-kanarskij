@@ -12,7 +12,7 @@
 | WeatherAnswer             | answer       | Відповідь на запрос                | Текст | Довжина < 100 символів |
 | WeatherAnswer             | date         | Дата                               | Дата  | -                      |
 | Windy                     | region       | Регіон                             | Текст | Довжина < 30 символів  |
-| Windy                     | WeatherState | Інформація про температуру         | Текст | Довжина < 100 символів |
+| Windy                     | weatherState | Інформація про температуру         | Текст | Довжина < 100 символів |
 | HealthConsultationRequest | date         | Дата запиту                        | Дата  | -                      |
 | HealthConsultationRequest | description  | Опис                               | Текст | Довжина < 100 символів |
 | HealthConsultationRequest | userInfo     | Інформація про користувача         | Текст | Довжина < 100 символів |
