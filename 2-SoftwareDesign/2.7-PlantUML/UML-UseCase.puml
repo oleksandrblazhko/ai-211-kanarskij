@@ -8,7 +8,7 @@ left to right direction
 actor User
 actor Windy
 actor Doctor
-actor Pen-friend
+actor Penfriend
 
 rectangle Software {
 
@@ -23,13 +23,13 @@ rectangle Software {
     User -- (Перегляд температури повітря)
     User -- (Написати Online повідомлення)
     User -- (Отримувати Online повідомлення)
-    Pen-friend -- (Написати Online повідомлення)
-    Pen-friend -- (Отримувати Online повідомлення)
+    Penfriend -- (Написати Online повідомлення)
+    Penfriend -- (Отримувати Online повідомлення)
     Windy -- (Перегляд інформації про якість повітря)
     Doctor -- (Надати пораду)
 
     Doctor --|> User
-    Pen-friend --|> User 
+    Penfriend --|> User 
 
    (Перегляд температури повітря) .> (Авторизувати користувача) : include
    (Написати Online повідомлення) .> (Авторизувати користувача) : include
