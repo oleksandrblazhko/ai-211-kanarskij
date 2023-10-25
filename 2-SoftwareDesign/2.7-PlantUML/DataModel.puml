@@ -1,0 +1,38 @@
+@startuml
+
+title Example of Relation Schema
+
+hide circle
+
+entity "User" as User {
+    (PK) Userno
+    --
+    name
+    email
+    region
+    phoneNumber
+}
+
+entity "HealthConsultationRequest" as HealthConsultationRequest{
+    (PK) HealthConsultationRequestno
+    --
+    date
+    description
+    userInfo
+    (FK) Userno
+}
+
+entity "Doctor" as Doctor{
+    (PK) Doctorno
+    --
+    name
+    email
+    speciality
+    phoneNumber
+    (FK) HealthConsultationRequestno
+}
+
+User --{ HealthConsultationRequest
+HealthConsultationRequest--{ Doctor
+
+@enduml
