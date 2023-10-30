@@ -1,0 +1,41 @@
+@startuml
+
+title Usecase for Information system
+
+left to right direction
+
+
+actor User
+actor Windy
+actor Doctor
+actor Penfriend
+
+rectangle Software {
+
+    usecase (Авторизувати користувача)
+    usecase (Перегляд температури повітря)
+    usecase (Написати Online повідомлення)
+    usecase (Отримувати Online повідомлення)
+    usecase (Надати пораду)
+
+
+    User -- (Авторизувати користувача)
+    User -- (Перегляд температури повітря)
+    User -- (Написати Online повідомлення)
+    User -- (Отримувати Online повідомлення)
+    Penfriend -- (Написати Online повідомлення)
+    Penfriend -- (Отримувати Online повідомлення)
+    Windy -- (Перегляд інформації про якість повітря)
+    Doctor -- (Надати пораду)
+
+    Doctor --|> User
+    Penfriend --|> User 
+
+   (Перегляд температури повітря) .> (Авторизувати користувача) : include
+   (Написати Online повідомлення) .> (Авторизувати користувача) : include
+   (Отримувати Online повідомлення) .> (Авторизувати користувача) : include
+   (Надати пораду) .> (Авторизувати користувача) : include
+
+}
+
+@enduml

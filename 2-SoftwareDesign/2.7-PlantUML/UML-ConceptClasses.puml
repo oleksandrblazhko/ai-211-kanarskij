@@ -1,0 +1,33 @@
+@startuml
+
+hide circle
+title Example of Classes Diagram 
+
+Class User{
+    fullName
+    email
+    region
+    phoneNumber
+}
+
+Class HealthConsultationRequest{
+    date
+    description
+    userInfo
+}
+
+Class Doctor{
+    name
+    email
+    speciality
+    phoneNumber
+}
+
+
+User"1" --> "*"HealthConsultationRequest: send
+
+HealthConsultationRequest"1" --> "*"Doctor : send
+
+Doctor"1" --> "1"User : connect
+
+@enduml
