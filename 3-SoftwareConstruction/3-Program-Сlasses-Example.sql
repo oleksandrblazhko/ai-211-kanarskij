@@ -22,7 +22,7 @@ CREATE OR REPLACE TYPE T_TemperatureAnswers AS OBJECT (
 CREATE OR REPLACE TYPE T_Windy AS OBJECT (
   region VARCHAR(255) NOT NULL := '',
   WeatherState VARCHAR(255) NOT NULL := '',
-  MEMBER PROCEDURE getTemperature(p_region VARCHAR, user T_Users)
+  MEMBER PROCEDURE getTemperature(p_region VARCHAR(255), user T_Users)
 );
 
 CREATE OR REPLACE TYPE T_HealthConsultationRequests AS OBJECT (
