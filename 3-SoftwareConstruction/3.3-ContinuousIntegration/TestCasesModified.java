@@ -4,33 +4,34 @@ import oracle.jdbc.driver.*;
 class TestCases {
     public static void main(final String[] args) {
         int testCaseResult = 0; // 0 = Passed -1 = Failed
-try {
+        try { 
             // load Oracle JDBC-driver
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             
             // open connect to DB
             Connection con = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@91.219.60.189:1521/XEPDB1",
+                    "jdbc:oracle:thin:@185.235.218.67:1521/XEPDB1",
                     args[0], // get login as 1st command line parameter
                     args[1]); // get password as 2nd command line parameter 
 
             // create template string with PL/SQL-function "GetTemperature"
-            CallableStatement cstmt1 = con.prepareCall("{? = call GetTemperature(?,?)}");
+            CallableStatement cstmt1 = con.prepareCall("{? = call getTemperature(?,?)}");
             cstmt1.registerOutParameter(1, Types.NUMERIC);
 
             // Test Case 1
             System.out.print("TC1 ( 'User is \"Anatoliy\" and region is \"Odessa\"' ) := ");
-              cstmt1.setString(2, "Anatoliy");
+            cstmt1.setString(2, "Anatoliy");
             cstmt1.setString(3, "Odessa");
             cstmt1.executeUpdate();
-p  ld
+
             // analyze TestCase-result
-            if (cstmt1.getInt(1) == 1) {
+            if (cstmt1.getInt(1) == -1) {
                 System.out.println("Passed");
-            } else {System.out.println("Failed");
-                 testCaseResult = -1;
+            } else {
+                System.out.println("Failed");
+                testCaseResult = -1;
             }
-klm  sa
+
             // Test Case 2
             System.out.print("TC2 ( 'Empty user and region is \"Odessa\"' ) := ");
             cstmt1.setString(2, null);
@@ -38,7 +39,7 @@ klm  sa
             cstmt1.executeUpdate();
 
             // analyze TestCase-result
-            if (cstmt1.getInt(1) == -1) {
+            if (cstmt1.getInt(1) == 1) {
                 System.out.println("Passed");
             } else {
                 System.out.println("Failed");
@@ -52,7 +53,7 @@ klm  sa
             cstmt1.executeUpdate();
 
             // analyze TestCase-result
-            if (cstmt1.getInt(1) == -1) {
+            if (cstmt1.getInt(1) == 1) {
                 System.out.println("Passed");
             } else {
                 System.out.println("Failed");
@@ -66,7 +67,7 @@ klm  sa
             cstmt1.executeUpdate();
 
             // analyze TestCase-result
-            if (cstmt1.getInt(1) == -1) {
+            if (cstmt1.getInt(1) == 1) {
                 System.out.println("Passed");
             } else {
                 System.out.println("Failed");
@@ -80,7 +81,7 @@ klm  sa
             cstmt1.executeUpdate();
 
             // analyze TestCase-result
-            if (cstmt1.getInt(1) == -1) {
+            if (cstmt1.getInt(1) == 1) {
                 System.out.println("Passed");
             } else {
                 System.out.println("Failed");

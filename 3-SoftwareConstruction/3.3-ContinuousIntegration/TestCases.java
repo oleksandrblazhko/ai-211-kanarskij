@@ -4,18 +4,18 @@ import oracle.jdbc.driver.*;
 class TestCases {
     public static void main(final String[] args) {
         int testCaseResult = 0; // 0 = Passed -1 = Failed
-        try {
+        try { 
             // load Oracle JDBC-driver
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             
             // open connect to DB
             Connection con = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@91.219.60.189:1521/XEPDB1",
+                    "jdbc:oracle:thin:@185.235.218.67:1521/XEPDB1",
                     args[0], // get login as 1st command line parameter
                     args[1]); // get password as 2nd command line parameter 
 
             // create template string with PL/SQL-function "GetTemperature"
-            CallableStatement cstmt1 = con.prepareCall("{? = call GetTemperature(?,?)}");
+            CallableStatement cstmt1 = con.prepareCall("{? = call getTemperature(?,?)}");
             cstmt1.registerOutParameter(1, Types.NUMERIC);
 
             // Test Case 1
@@ -32,6 +32,8 @@ class TestCases {
                 testCaseResult = -1;
             }
 
+	    cstmt1.clearParameters();
+
             // Test Case 2
             System.out.print("TC2 ( 'Empty user and region is \"Odessa\"' ) := ");
             cstmt1.setString(2, null);
@@ -45,7 +47,9 @@ class TestCases {
                 System.out.println("Failed");
                 testCaseResult = -1;
             }
-
+		
+	    cstmt1.clearParameters();
+		
 	    // Test Case 3
             System.out.print("TC3 ( 'User is \"Anatoliy\" and empty region' ) := ");
             cstmt1.setString(2, "Anatoliy");
@@ -59,6 +63,8 @@ class TestCases {
                 System.out.println("Failed");
                 testCaseResult = -1;
             }
+
+	    cstmt1.clearParameters();
 
 	    // Test Case 4
             System.out.print("TC4 ( 'User is \"Anatoliy\" and region is \"Odessa 2+2=4\"' ) := ");
@@ -74,6 +80,8 @@ class TestCases {
                 testCaseResult = -1;
             }
 
+	    cstmt1.clearParameters();
+		
 	    // Test Case 5
             System.out.print("TC5 ( 'User is \"Anatoliy\" and region is \"I love chicken with sauce and you\"' ) := ");
             cstmt1.setString(2, "Anatoliy");
